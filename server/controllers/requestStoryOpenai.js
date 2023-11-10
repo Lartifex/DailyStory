@@ -26,9 +26,9 @@ Here's an explanation of each field of the response:
 3. Each paragraph has to be maximum 30 words long.
 4. What you are going to write has to have the action of the story (draw the reader in with an inciting incident), the background (introduce and set the scene of the world and characters), and the development (characters chase their goals to progress the plot).
 
-DalleMessage: You need to create a short sentence that will be the prompt for Dall-e so that it can create a front page image for the story. Make sure it's in the style of a book cover, preferably a drawing.
+DalleMessage: You need to create a short sentence that will be the prompt for Dall-e so that it can create a front page image for the story. Preferably a drawing.
 
-Genre: Inside the Fiction genre, you need to classify the short story as a genre. Example: fantasy or thriller."`;
+Genre: Inside the Fiction genre, you need to classify the short story as a genre. Example: Fantasy or Thriller."`;
 
 export async function msgRequest(ctx, next) {
   try {
@@ -44,17 +44,17 @@ export async function msgRequest(ctx, next) {
     console.log("MESSAGE", msgContent.text);
 
     let imgPrompt = msgContent.dalleMessage;
-    // console.log("IMG PROMPT", imgPrompt);
+    console.log("IMG PROMPT", imgPrompt);
 
     // Image request to dalle
     const image = await openai.images.generate({
       model: "dall-e-3",
       prompt: `${imgPrompt}`,
     });
-    // console.log("IMAGE DATA", image.data);
+    console.log("IMAGE DATA", image.data);
 
     let imgURL = image.data[0].url;
-    // console.log("IMG URL", imgURL);
+    console.log("IMG URL", imgURL);
 
     // Create a new StorySchema
     const storySchema = new StorySchema({

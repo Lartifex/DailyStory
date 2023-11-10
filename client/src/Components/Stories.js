@@ -1,5 +1,5 @@
 import React from "react";
-import Story from "./Story";
+import Story from "./Story.js";
 
 const Stories = ({ stories }) => {
   const storiesArray = stories.stories;

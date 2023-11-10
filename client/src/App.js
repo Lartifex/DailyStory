@@ -1,6 +1,10 @@
 import "./App.css";
 import { useState, useEffect } from "react";
-import Stories from "./Components/Stories.js";
+import { Link, BrowserRouter, Route, Routes } from "react-router-dom";
+import Stories from "./components/Stories.js";
+import HomeIcon from "./svg/HomeIcon.svg";
+import MyStories from "./svg/MyStories.svg";
+import Profile from "./svg/Profile.svg";
 
 function App() {
   const [stories, setStories] = useState([]);
@@ -22,13 +26,31 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Hello</h1>
-      </header>
-      <Stories stories={stories} />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Stories stories={stories} />}></Route>
+        <Route path="/story">{/* Chosen story component*/}</Route>
+        <Route path="/my-stories">{/* All my stories component */}</Route>
+      </Routes>
+      <div className="footer">
+        <Link to="/">
+          {" "}
+          <img src={HomeIcon} alt="Home Logo" />
+        </Link>
+        <Link to="/my-stories">
+          {" "}
+          <img src={MyStories} alt="MyStories Logo" />
+        </Link>
+        <Link to="/profile">
+          {" "}
+          <img src={Profile} alt="Profile Logo" />
+        </Link>
+      </div>
+    </BrowserRouter>
   );
 }
+
+// TODO: Link to the story that you are writting from clicking the CoverIMG (url)
+// -->  <Link to="/story">Story</Link>
 
 export default App;

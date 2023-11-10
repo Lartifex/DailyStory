@@ -1,0 +1,49 @@
+h1 {
+  color: var(--white-white, #ffffff);
+  text-align: center;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.5rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 30px 10% auto 10%;
+  width: 80%;
+  /* max-height: ; */
+  background-color: rgb(156, 249, 249);
+}
+
+.container img {
+  width: 100%;
+  height: 100%;
+  border-radius: 1.25rem;
+  background: lightgray -63.949px -67.057px / 121.23% 179.084% no-repeat;
+}
+
+.textboxTitle {
+  display: flex;
+  padding: 0.2rem 0.2rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+  flex-shrink: 0;
+  border-radius: 3.125rem;
+  border: 1px solid #FF9F1C;
+  background: #FF9F1C;
+}
+
+.textboxGenre {
+  display: flex;
+  padding: 0.2rem 0.2rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+  flex-shrink: 0;
+  border-radius: 3.125rem;
+  border: 1px solid #778C89;
+  background: #778C89;
+}
