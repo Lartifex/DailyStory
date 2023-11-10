@@ -1,5 +1,5 @@
 import Router from "koa-router";
-import { msgRequest } from "../controllers/requestStoryOpenai.js";
+import { msgRequest, getStoryById } from "../controllers/requestStoryOpenai.js";
 import { StorySchema } from "../models/storySchema.js";
 import moment from "moment";
 
@@ -29,5 +29,7 @@ routerStoryApi.get("/stories/today", async (ctx) => {
     ctx.body = { message: "Internal server error", error: err.message };
   }
 });
+
+routerStoryApi.get("/stories/:_id", getStoryById);
 
 export default routerStoryApi;

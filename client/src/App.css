@@ -7,6 +7,20 @@
   font-family: 'Open Sans', sans-serif;
 }
 
+.list_scroll {
+  display: flex;
+  flex-wrap: nowrap;
+  padding-left: 5%;
+  padding-bottom: 2%;
+  overflow-y: hidden;
+}
+
+.list_scroll .container {
+  margin: inherit;
+  padding: 5px;
+  min-width: calc(100% - 30px);
+}
+
 .footer {
   display: flex;
   padding: 1.5rem 4.5rem;

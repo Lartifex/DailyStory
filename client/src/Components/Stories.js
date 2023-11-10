@@ -1,17 +1,17 @@
 import React from "react";
 import Story from "./Story.js";
 import "./styles/stories.css";
+import { Link } from "react-router-dom";
 
-const Stories = ({ stories, onChosen }) => {
-  const storiesArray = stories.stories;
-
+const Stories = ({ stories }) => {
+  console.log("stories: ", stories);
   return (
     <>
-      <h1>Hi, Name!</h1>
-      <h2>Choose your daily story:</h2>
-      {storiesArray &&
-        storiesArray.map((story) => (
-          <Story key={story._id} story={story} onChosen={onChosen} />
+      {stories &&
+        stories.map((story) => (
+          <Link to={`/new-story/${story._id}`}>
+            <Story key={story._id} story={story} />
+          </Link>
         ))}
     </>
   );

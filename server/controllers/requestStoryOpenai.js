@@ -75,3 +75,19 @@ export async function msgRequest(ctx, next) {
     ctx.throw(400, err);
   }
 }
+
+export async function getStoryById(ctx, next) {
+  try {
+    const _id = ctx.params._id;
+    console.log("ID:", _id);
+    const stories = await StorySchema.findById(_id);
+    if (!stories) {
+      ctx.status = 404;
+      ctx.body = "Task not found";
+    }
+    ctx.body = stories;
+  } catch (err) {
+    ctx.status = 500;
+    ctx.body = "Server Error";
+  }
+}

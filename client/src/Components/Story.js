@@ -1,9 +1,9 @@
 import React from "react";
 import "./styles/story.css";
 
-const Story = ({ story, onChosen }) => {
+const Story = ({ story }) => {
   return (
-    <div className="container" onClick={() => onChosen(story._id)}>
+    <div className="container">
       <img src={story.url} alt="Story Cover" />
       <div className="textboxTitle">
         <h3>{story.title}</h3>
