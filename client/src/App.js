@@ -1,10 +1,10 @@
 import "./App.css";
 import { useState, useEffect } from "react";
-import { Link, BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Stories from "./components/Stories.js";
-import HomeIcon from "./svg/HomeIcon.svg";
-import MyStories from "./svg/MyStories.svg";
-import Profile from "./svg/Profile.svg";
+import Footer from "./components/Footer.js";
+import StoryPage from "./pages/StoryPage.js";
+import MyStoriesPage from "./pages/MyStoriesPage.js";
 
 function App() {
   const [stories, setStories] = useState([]);
@@ -25,27 +25,23 @@ function App() {
     return data;
   };
 
+  const fetchChosenStory = async (_id) => {
+    await fetch(`http://localhost:3001/stories/today/${_id}`, {
+      method: "GET",
+    }).then(setStories(stories.stories.filter((story) => story._id === _id)));
+  };
+
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Stories stories={stories} />}></Route>
-        <Route path="/story">{/* Chosen story component*/}</Route>
-        <Route path="/my-stories">{/* All my stories component */}</Route>
+        <Route
+          path="/"
+          element={<Stories stories={stories} onChosen={fetchChosenStory} />}
+        ></Route>
+        <Route path="/story" element={<StoryPage />}></Route>
+        <Route path="/my-stories" element={<MyStoriesPage />}></Route>
       </Routes>
-      <div className="footer">
-        <Link to="/">
-          {" "}
-          <img src={HomeIcon} alt="Home Logo" />
-        </Link>
-        <Link to="/my-stories">
-          {" "}
-          <img src={MyStories} alt="MyStories Logo" />
-        </Link>
-        <Link to="/profile">
-          {" "}
-          <img src={Profile} alt="Profile Logo" />
-        </Link>
-      </div>
+      <Footer />
     </BrowserRouter>
   );
 }

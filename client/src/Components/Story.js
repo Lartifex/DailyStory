@@ -1,15 +1,15 @@
 import React from "react";
-import "./Story.css";
+import "./styles/story.css";
 
-const Story = ({ story }) => {
+const Story = ({ story, onChosen }) => {
   return (
-    <div className="container">
+    <div className="container" onClick={() => onChosen(story._id)}>
       <img src={story.url} alt="Story Cover" />
       <div className="textboxTitle">
-        <h1>{story.title}</h1>
+        <h3>{story.title}</h3>
       </div>
       <div className="textboxGenre">
-        <h1>{story.genre}</h1>
+        <h3>{story.genre}</h3>
       </div>
     </div>
   );
