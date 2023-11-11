@@ -3,14 +3,16 @@
 import Koa from "koa";
 import bodyParser from "koa-bodyparser";
 import cors from "@koa/cors";
-import routerStoryApi from "./routes/requestStoryRoutes.js";
+import requestStoryRouter from "./routes/requestStoryRoutes.js";
+import userStoryRouter from "./routes/userStoryRoutes.js";
 
 const app = new Koa();
 
 app.use(cors());
 app.use(bodyParser());
 
-app.use(routerStoryApi.routes());
+app.use(requestStoryRouter.routes());
+app.use(userStoryRouter.routes());
 
 const port = 3001;
 

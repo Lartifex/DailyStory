@@ -1,66 +1,63 @@
-import React, { useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import backButton from "../svg/backButton.svg";
 import "./newStory.css";
+import NewStory from "../components/NewStory";
 
-const NewStory = () => {
+const NewStoryPage = () => {
   const { id } = useParams();
-
+  const navigate = useNavigate();
   // Text Input
-  const [inputValue, setInputValue] = useState("");
+  const [userStoryText, setUserStoryText] = useState("");
 
-  function handleInputChange(event) {
-    setInputValue(event.target.value);
-  }
+  const handleInputChange = (event) => {
+    setUserStoryText(event.target.value);
+  };
 
-  // To fetch stories by Id
-  const [storyData, setStoryData] = useState({});
+  // Add the user's story; postUserStory(BK)
+  const saveUserStory = async () => {
+    const userStoryBody = {
+      originalStoryId: id,
+      userText: userStoryText,
+    };
 
-  const fetchChosenStory = async (_id) => {
-    try {
-      const response = await fetch(`http://localhost:3001/stories/${_id}`);
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      } else {
-        const story = await response.json();
-        setStoryData(story);
-        console.log(story);
-      }
-    } catch (e) {
-      console.log(e);
+    const res = await fetch(`http://localhost:3001/userstories`, {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify(userStoryBody),
+    });
+    const response = await res.json();
+    const newId = response._id;
+
+    if (res.ok) {
+      navigate(`/my-stories/${newId}`);
     }
   };
 
-  useEffect(() => {
-    fetchChosenStory(id);
-  }, [id]);
-
   return (
-    <div className="NewStory">
+    <div className="NewStoryPage">
       <Link to="/">
         <img src={backButton} alt="Back Button" />
       </Link>
-      <div className="imgCover">
-        <img src={storyData.url} alt="Story Cover" />
+      <NewStory />
+      <div className="inputField">
+        <textarea
+          name="storytextarea"
+          placeholder="And now... what happens?"
+          value={userStoryText}
+          onChange={handleInputChange}
+          maxLength={300}
+        />
       </div>
-      <h1>{storyData.title}</h1>
-      <p>{storyData.text}</p>
-      <p>{inputValue}</p>
-      <Link to="/my-stories/saved">
+      <div onClick={saveUserStory}>
         <div className="textboxTitle">
           <h3>THE END</h3>
         </div>
-      </Link>
-      <div className="inputField">
-        <input
-          name="myInput"
-          placeholder="And now... what happens?"
-          value={inputValue}
-          onChange={handleInputChange}
-        />
       </div>
     </div>
   );
 };
 
-export default NewStory;
+export default NewStoryPage;

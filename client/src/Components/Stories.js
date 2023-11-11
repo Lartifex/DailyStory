@@ -12,8 +12,9 @@ const Stories = ({ stories }) => {
           <Link
             to={`/new-story/${story._id}`}
             style={{ textDecoration: "none" }}
+            key={story._id}
           >
-            <Story key={story._id} story={story} />
+            <Story story={story} />
           </Link>
         ))}
     </>

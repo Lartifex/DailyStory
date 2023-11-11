@@ -1,0 +1,17 @@
+.SavedStory {
+  display: flex;
+  justify-content: center;
+}
+
+.SavedStory .button {
+  display: flex;
+  width: 3.125rem;
+  height: 3.125rem;
+  padding: 0.8125rem 1.75rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+  border-radius: 3.125rem;
+  border: 1px solid #FF9F1C;
+  background: #FF9F1C;
+}

@@ -18,6 +18,7 @@ function App() {
     getStories();
   }, []);
 
+  // Get all stories from today - db
   const fetchStories = async () => {
     const res = await fetch(`http://localhost:3001/stories/today`);
     const data = await res.json();
@@ -34,7 +35,7 @@ function App() {
           path="/my-stories"
           element={<MyStoriesPage stories={stories} />}
         ></Route>
-        <Route path="/my-stories/saved" element={<SavedStoryPage />}></Route>
+        <Route path="/my-stories/:id" element={<SavedStoryPage />}></Route>
         <Route path="/profile" element={<Profile />}></Route>
       </Routes>
     </BrowserRouter>

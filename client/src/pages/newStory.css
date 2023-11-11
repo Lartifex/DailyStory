@@ -8,7 +8,7 @@ p {
   margin: 3% 8% 8% 8%;
 }
 
-.NewStory {
+.NewStoryPage {
   width: 100%;
   height: calc(100vh - 70px - 30px);
   overflow: scroll;
@@ -23,7 +23,7 @@ p {
   background: lightgray -63.949px -67.057px / 121.23% 179.084% no-repeat;
 }
 
-.NewStory .textboxTitle {
+.NewStoryPage .textboxTitle {
   max-width: fit-content;
   padding: 1%;
   margin: 10% auto auto auto;
@@ -34,19 +34,22 @@ p {
   padding: 1.5rem 1.5rem;
   justify-content: center;
   align-items: center;
-  position: fixed;
-  bottom: 0;
   width: 100%;
-  gap: 20%;
-  border-radius: 2rem;
-  background: #2EC4B6;
-  box-shadow: 15px -19px 22px 0px rgba(24, 111, 242, 0.05);
 }
 
-.inputField input {
+.inputField textarea {
   display: flex;
   justify-content: center;
   align-items: center;
   width: calc(100% - 10px);
+  height: 180px;
   padding: 5px;
+  border: none;
+  outline: none;
+  color: var(--dark-dark-2, #1F2A37);
+  text-align: justify;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5rem;
 }

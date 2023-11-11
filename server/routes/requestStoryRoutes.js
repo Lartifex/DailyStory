@@ -3,9 +3,9 @@ import { msgRequest, getStoryById } from "../controllers/requestStoryOpenai.js";
 import { StorySchema } from "../models/storySchema.js";
 import moment from "moment";
 
-const routerStoryApi = new Router();
+const requestStoryRouter = new Router();
 
-routerStoryApi.get("/stories/today", async (ctx) => {
+requestStoryRouter.get("/stories/today", async (ctx) => {
   try {
     // Check if there are Stories saved from today in the db
     const today = moment().startOf("day");
@@ -30,6 +30,6 @@ routerStoryApi.get("/stories/today", async (ctx) => {
   }
 });
 
-routerStoryApi.get("/stories/:_id", getStoryById);
+requestStoryRouter.get("/stories/:_id", getStoryById);
 
-export default routerStoryApi;
+export default requestStoryRouter;
