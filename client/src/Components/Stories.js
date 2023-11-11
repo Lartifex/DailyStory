@@ -9,7 +9,10 @@ const Stories = ({ stories }) => {
     <>
       {stories &&
         stories.map((story) => (
-          <Link to={`/new-story/${story._id}`}>
+          <Link
+            to={`/new-story/${story._id}`}
+            style={{ textDecoration: "none" }}
+          >
             <Story key={story._id} story={story} />
           </Link>
         ))}

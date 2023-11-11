@@ -18,3 +18,8 @@ h2 {
   margin-left: 10%;
 }
 
+.storiesScroll {
+  width: 100%;
+  height: calc(100vh - 70px - 130px);
+  overflow: scroll;
+}

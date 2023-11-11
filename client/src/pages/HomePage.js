@@ -8,7 +8,9 @@ const HomePage = ({ stories }) => {
     <div>
       <h1>Hi, Name!</h1>
       <h2>Choose your daily story:</h2>
-      <Stories stories={stories} />
+      <div className="storiesScroll">
+        <Stories stories={stories} />
+      </div>
       <Footer />
     </div>
   );

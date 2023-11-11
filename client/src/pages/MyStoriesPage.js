@@ -1,6 +1,7 @@
 import React from "react";
 import Story from "../components/Story.js";
 import "../App.css";
+import Footer from "../components/Footer.js";
 
 const MyStoriesPage = ({ stories, onChosen }) => {
   const storiesArray = stories.stories;
@@ -17,6 +18,7 @@ const MyStoriesPage = ({ stories, onChosen }) => {
       </div>
       <h2>My favorites:</h2>
       <div>{/* scroll favorite stories */}</div>
+      <Footer />
     </div>
   );
 };

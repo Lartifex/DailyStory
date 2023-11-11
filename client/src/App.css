@@ -20,17 +20,3 @@
   padding: 5px;
   min-width: calc(100% - 30px);
 }
-
-.footer {
-  display: flex;
-  padding: 1.5rem 4.5rem;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  gap: 20%;
-  border-radius: 2rem;
-  background: #2EC4B6;
-  box-shadow: 15px -19px 22px 0px rgba(24, 111, 242, 0.05);
-}

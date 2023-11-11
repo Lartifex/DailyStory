@@ -14,7 +14,6 @@ h3 {
   margin: 30px 10% auto 10%;
   width: 80%;
   /* max-height: ; */
-  background-color: rgb(156, 249, 249);
 }
 
 .container img {
@@ -30,7 +29,6 @@ h3 {
   justify-content: center;
   align-items: center;
   gap: 0.625rem;
-  flex-shrink: 0;
   border-radius: 3.125rem;
   border: 1px solid #FF9F1C;
   background: #FF9F1C;
