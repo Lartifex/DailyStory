@@ -4,7 +4,7 @@ h1 {
   font-style: normal;
   font-weight: 600;
   line-height: 1.875rem;
-  margin-top: 50px;
+  padding-top: 50px;
   margin-left: 10%;
   margin-right: 10%;
 }
@@ -21,6 +21,6 @@ h2 {
 
 .storiesScroll {
   width: 100%;
-  height: calc(100vh - 70px - 130px);
-  overflow: scroll;
+  /* height: calc(100vh - 70); */
+  /* overflow: scroll; */
 }

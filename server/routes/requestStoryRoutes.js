@@ -22,7 +22,10 @@ requestStoryRouter.get("/stories/today", async (ctx) => {
       // console.log("TODAY STORIES", todayStories);
     } else {
       // If there aren't, execute the function in requestStoryOpenai controller
-      ctx = await msgRequest(ctx);
+      ctx = await msgRequest(ctx, "Fantasy");
+      // ctx = await msgRequest(ctx, "Mystery");
+      // ctx = await msgRequest(ctx, "Adventure");
+      // ctx = await msgRequest(ctx, "Science fiction");
     }
   } catch (err) {
     ctx.status = 500;

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import backButton from "../svg/backButton.svg";
 import "./newStory.css";
@@ -10,6 +10,28 @@ const NewStoryPage = () => {
   // Text Input
   const [userStoryText, setUserStoryText] = useState("");
 
+  // To fetch stories by Id
+  const [storyData, setStoryData] = useState({});
+
+  const fetchChosenStory = async (_id) => {
+    try {
+      const response = await fetch(`http://localhost:3001/stories/${_id}`);
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      } else {
+        const story = await response.json();
+        setStoryData(story);
+        console.log(story);
+      }
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+  useEffect(() => {
+    fetchChosenStory(id);
+  }, [id]);
+
   const handleInputChange = (event) => {
     setUserStoryText(event.target.value);
   };
@@ -19,6 +41,10 @@ const NewStoryPage = () => {
     const userStoryBody = {
       originalStoryId: id,
       userText: userStoryText,
+      imgB64: storyData.imgB64,
+      text: storyData.text,
+      title: storyData.title,
+      genre: storyData.genre,
     };
 
     const res = await fetch(`http://localhost:3001/userstories`, {
@@ -41,7 +67,7 @@ const NewStoryPage = () => {
       <Link to="/">
         <img src={backButton} alt="Back Button" />
       </Link>
-      <NewStory />
+      <NewStory storyData={{ ...storyData }} />
       <div className="inputField">
         <textarea
           name="storytextarea"
@@ -51,7 +77,7 @@ const NewStoryPage = () => {
           maxLength={300}
         />
       </div>
-      <div onClick={saveUserStory}>
+      <div onClick={saveUserStory} className="theEndContainer">
         <div className="textboxTitle">
           <h3>THE END</h3>
         </div>

@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 
 const story = new Schema({
   date: Date,
-  url: String,
+  imgB64: String,
   title: String,
   text: String,
   genre: String,

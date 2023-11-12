@@ -17,16 +17,8 @@ export async function postUserStory(ctx) {
 export async function getUserStory(ctx) {
   try {
     const userStoryById = await UserStorySchema.findById(ctx.params.id);
-    const originalStoryId = userStoryById.originalStoryId;
-    const originalStoryData = await StorySchema.findById(originalStoryId);
-    const body = {
-      url: originalStoryData.url,
-      title: originalStoryData.title,
-      text: originalStoryData.text,
-      userText: userStoryById.userText,
-    };
     ctx.status = 200;
-    ctx.body = body;
+    ctx.body = userStoryById;
   } catch (err) {
     ctx.status = 500;
     ctx.body = "Server Error: " + err.message;

@@ -5,12 +5,12 @@ p {
   font-style: normal;
   font-weight: 400;
   line-height: 1.5rem;
-  margin: 3% 8% 8% 8%;
+  margin: 3% 8% 0% 8%;
 }
 
 .NewStoryPage {
   width: 100%;
-  height: calc(100vh - 70px - 30px);
+  /* height: calc(100vh - 70px - 30px); */
   overflow: scroll;
 }
 
@@ -26,7 +26,7 @@ p {
 .NewStoryPage .textboxTitle {
   max-width: fit-content;
   padding: 1%;
-  margin: 10% auto auto auto;
+  margin: 0% auto auto auto;
 }
 
 .inputField {
@@ -52,4 +52,18 @@ p {
   font-style: normal;
   font-weight: 400;
   line-height: 1.5rem;
+}
+
+.theEndContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.theEndContainer .textboxTitle {
+  position: relative;
+  width: calc(100% - 20px);
+}
+.theEndContainer h3 {
+  width: 100%;
 }

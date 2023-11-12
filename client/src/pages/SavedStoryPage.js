@@ -22,9 +22,12 @@ const SavedStoryPage = () => {
   });
 
   return (
-    <div>
+    <div className="containerWithFooter">
       <div className="imgCover">
-        <img src={userStoryData.url} alt="Story Cover" />
+        <img
+          src={`data:image/png;base64,${userStoryData.imgB64}`}
+          alt="Story Cover"
+        />
       </div>
       <h1>{userStoryData.title}</h1>
       <p>{userStoryData.text}</p>

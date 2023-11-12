@@ -5,7 +5,7 @@ import "../components/styles/stories.css";
 
 const HomePage = ({ stories }) => {
   return (
-    <div>
+    <div className="containerWithFooter">
       <h1>Hi, Name!</h1>
       <h2>Choose your daily story:</h2>
       <div className="storiesScroll">

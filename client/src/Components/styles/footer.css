@@ -6,8 +6,8 @@
   position: fixed;
   bottom: 0;
   width: 100%;
+  height: 60px;
   gap: 20%;
-  border-radius: 2rem;
-  background: #2EC4B6;
+  background: #06B6D4;
   box-shadow: 15px -19px 22px 0px rgba(24, 111, 242, 0.05);
 }
