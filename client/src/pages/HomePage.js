@@ -1,4 +1,3 @@
-import React from "react";
 import Footer from "../components/Footer";
 import Stories from "../components/Stories";
 import "../components/styles/stories.css";

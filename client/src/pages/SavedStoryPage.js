@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import { format } from "date-fns";
 import Footer from "../components/Footer";
 import heart from "../svg/heart.svg";
 import send from "../svg/send.svg";
@@ -19,7 +20,7 @@ const SavedStoryPage = () => {
 
   useEffect(() => {
     getUserStory();
-  });
+  }, []);
 
   return (
     <div className="containerWithFooter">
@@ -29,6 +30,12 @@ const SavedStoryPage = () => {
           alt="Story Cover"
         />
       </div>
+      <p>
+        <span>Created on: </span>
+        {userStoryData.creationDate
+          ? format(new Date(userStoryData.creationDate), "MMMM do, yyyy")
+          : "Loading date..."}
+      </p>
       <h1>{userStoryData.title}</h1>
       <p>{userStoryData.text}</p>
       <p>{userStoryData.userText}</p>

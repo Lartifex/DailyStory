@@ -10,6 +10,7 @@ const userStory = new Schema({
   text: String,
   userText: String,
   genre: String,
+  creationDate: String,
 });
 
 export const UserStorySchema = mongoose.model("userstories", userStory);

@@ -2,13 +2,14 @@ import Story from "./Story.js";
 import "./styles/stories.css";
 import { Link } from "react-router-dom";
 
-const Stories = ({ stories }) => {
+const UserStories = ({ userStories }) => {
+  console.log("userStories: ", userStories);
   return (
     <>
-      {stories &&
-        stories.map((story) => (
+      {userStories &&
+        userStories.map((story) => (
           <Link
-            to={`/new-story/${story._id}`}
+            to={`/my-stories/${story._id}`}
             style={{ textDecoration: "none" }}
             key={story._id}
           >
@@ -19,4 +20,4 @@ const Stories = ({ stories }) => {
   );
 };
 
-export default Stories;
+export default UserStories;

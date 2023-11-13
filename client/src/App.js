@@ -22,7 +22,7 @@ function App() {
   const fetchStories = async () => {
     const res = await fetch(`http://localhost:3001/stories/today`);
     const data = await res.json();
-    console.log(data);
+    // console.log(data);
     return data;
   };
 

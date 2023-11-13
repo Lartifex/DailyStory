@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import backButton from "../svg/backButton.svg";
 import "./newStory.css";
@@ -45,6 +45,7 @@ const NewStoryPage = () => {
       text: storyData.text,
       title: storyData.title,
       genre: storyData.genre,
+      creationDate: storyData.creationDate,
     };
 
     const res = await fetch(`http://localhost:3001/userstories`, {
@@ -62,6 +63,14 @@ const NewStoryPage = () => {
     }
   };
 
+  // To automatically scroll to the bottom of the page
+  const scrollToBottom = () => {
+    window.scrollTo({
+      top: document.documentElement.scrollHeight,
+      behavior: "smooth", // defines the transition animation
+    });
+  };
+
   return (
     <div className="NewStoryPage">
       <Link to="/">
@@ -74,6 +83,7 @@ const NewStoryPage = () => {
           placeholder="And now... what happens?"
           value={userStoryText}
           onChange={handleInputChange}
+          onClick={scrollToBottom}
           maxLength={300}
         />
       </div>

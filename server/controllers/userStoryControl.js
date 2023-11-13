@@ -1,5 +1,4 @@
 import { UserStorySchema } from "../models/userStorySchema.js";
-import { StorySchema } from "../models/storySchema.js";
 
 export async function postUserStory(ctx) {
   try {
