@@ -8,6 +8,7 @@ const Footer = () => {
   return (
     <div className="footer">
       <Link to="/">
+        {" "}
         <img src={HomeIcon} alt="Home Logo" />
       </Link>
       <Link to="/my-stories">

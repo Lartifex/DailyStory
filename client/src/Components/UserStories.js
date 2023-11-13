@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const UserStories = ({ userStories }) => {
   return (
-    <>
+    <div className="storiesScroll">
       {userStories &&
         userStories
           .sort((a, b) => (a.creationDate > b.creationDate ? 1 : -1))
@@ -16,7 +16,7 @@ const UserStories = ({ userStories }) => {
               <Story story={story} />
             </Link>
           ))}
-    </>
+    </div>
   );
 };
 

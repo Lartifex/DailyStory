@@ -1,26 +1,19 @@
-.SavedStory {
-  display: flex;
-  justify-content: center;
+.imgCover {
+  position: relative;
 }
 
-.SavedStory .button {
-  display: flex;
-  width: 3.125rem;
-  height: 3.125rem;
-  padding: 0.8125rem 1.75rem;
-  justify-content: center;
-  align-items: center;
-  gap: 0.625rem;
-  border-radius: 3.125rem;
-  border: 1px solid #4D7C0F;
-  background: #4D7C0F;
+.savedStory .heartIcon {
+  position: absolute;
+  left: 74%;
+  top: 86%
 }
 
-.CreatedOnText p {
+.createdOnText p {
   font-style: italic;
+  text-align: center;
 }
 
-.TitleStory h1{
+.titleStory h1{
   color: #111928;
   font-size: 1.5rem;
   font-weight: 600;
@@ -30,3 +23,14 @@
   margin-right: 10%;
   text-align: center;
 }
+
+.customHeart {
+  fill: #c9c7c7 !important;
+  transition: fill 0.1s;
+}
+
+.active.customHeart {
+  fill: rgb(205, 3, 3) !important;
+  transition: fill 0.1s;
+}
+

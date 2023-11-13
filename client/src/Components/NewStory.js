@@ -7,7 +7,7 @@ const NewStory = ({ storyData }) => {
           alt="Story Cover"
         />
       </div>
-      <div className="TitleStory">
+      <div className="titleStory">
         <h1>{storyData.title}</h1>
       </div>
       <p>{storyData.text}</p>

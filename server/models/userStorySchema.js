@@ -11,6 +11,7 @@ const userStory = new Schema({
   userText: String,
   genre: String,
   creationDate: String,
+  isFavorite: Boolean,
 });
 
 export const UserStorySchema = mongoose.model("userstories", userStory);

@@ -36,7 +36,6 @@ const NewStoryPage = () => {
     setUserStoryText(event.target.value);
   };
 
-  // Add the user's story; postUserStory(BK)
   const saveUserStory = async () => {
     const userStoryBody = {
       originalStoryId: id,
@@ -65,21 +64,18 @@ const NewStoryPage = () => {
     }
   };
 
-  // To automatically scroll to the bottom of the page
   const scrollToBottom = () => {
     window.scrollTo({
       top: document.documentElement.scrollHeight,
-      behavior: "smooth", // defines the transition animation
+      behavior: "smooth",
     });
   };
 
   return (
     <div className="newStoryPage">
-      <div className="backButton">
-        <Link to="/">
-          <img src={backButton} alt="Back Button" />
-        </Link>
-      </div>
+      <Link to="/" className="backButton">
+        <img src={backButton} alt="Back Button" />
+      </Link>
 
       <NewStory storyData={{ ...storyData }} />
       <div className="inputField">

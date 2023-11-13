@@ -7,7 +7,7 @@
     margin: auto;
   }
 
-  .NewStoryPage {
+  .newStoryPage {
     padding: 6%;
   }
 
@@ -15,7 +15,7 @@
     width: 4%;
   }
 
-  .TitleStory h1 {
+  .titleStory h1 {
     font-size: 2rem;
   }
 
@@ -33,7 +33,7 @@
     line-height: 1.7;
   }
 
-  .CreatedOnText p {
+  .createdOnText p {
     padding-left: 4%;
   }
 
@@ -52,7 +52,7 @@
     margin: auto;
   }
 
-  .TitleStory h1 {
+  .titleStory h1 {
     font-size: 3rem;
   }
 
@@ -61,7 +61,7 @@
     line-height: 1.8;
   }
 
-  .CreatedOnText p {
+  .createdOnText p {
     padding-left: 10%;
   }
 
