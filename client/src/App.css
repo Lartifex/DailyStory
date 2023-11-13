@@ -8,7 +8,7 @@
 }
 
 .containerWithFooter h1 {
-  color: var(--dark-dark, #111928);
+  color: #111928;
   font-size: 1.5rem;
   font-weight: 600;
   line-height: 1.875rem;
@@ -72,7 +72,7 @@ h2 {
 }
 
 h3 {
-  color: var(--white-white, #ffffff);
+  color: #ffffff;
   text-align: center;
   font-size: 1rem;
   font-style: normal;

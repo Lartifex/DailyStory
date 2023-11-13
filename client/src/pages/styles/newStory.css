@@ -1,5 +1,5 @@
 p {
-  color: var(--dark-dark-2, #1F2A37);
+  color: #1F2A37;
   text-align: justify;
   font-size: 1rem;
   font-style: normal;
@@ -8,7 +8,7 @@ p {
   margin: 3% 8% 0% 8%;
 }
 
-.NewStoryPage {
+.newStoryPage {
   width: 100%;
   overflow: scroll;
 }
@@ -28,7 +28,7 @@ p {
   border-radius: 1.25rem;
 }
 
-.NewStoryPage .textboxTitle {
+.newStoryPage .textboxTitle {
   max-width: fit-content;
   padding: 1%;
   margin: 0% auto auto auto;
@@ -51,7 +51,7 @@ p {
   padding: 5px;
   border: none;
   outline: none;
-  color: var(--dark-dark-2, #1F2A37);
+  color: #1F2A37;
   text-align: justify;
   font-size: 1rem;
   font-style: normal;

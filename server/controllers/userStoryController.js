@@ -5,7 +5,6 @@ export async function postUserStory(ctx) {
     const newUserStory = new UserStorySchema(ctx.request.body);
     const savedUserStory = await newUserStory.save();
     ctx.status = 200;
-    console.log("saved user story", savedUserStory);
     ctx.body = savedUserStory;
   } catch (err) {
     ctx.status = 500;

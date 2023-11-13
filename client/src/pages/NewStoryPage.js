@@ -7,6 +7,7 @@ import NewStory from "../components/NewStory";
 const NewStoryPage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
+
   // Text Input
   const [userStoryText, setUserStoryText] = useState("");
 
@@ -21,10 +22,9 @@ const NewStoryPage = () => {
       } else {
         const story = await response.json();
         setStoryData(story);
-        console.log(story);
       }
-    } catch (e) {
-      console.log(e);
+    } catch (err) {
+      return err;
     }
   };
 
@@ -60,6 +60,8 @@ const NewStoryPage = () => {
 
     if (res.ok) {
       navigate(`/my-stories/${newId}`);
+    } else {
+      throw new Error(`HTTP error! status: ${res.status}`);
     }
   };
 
@@ -72,7 +74,7 @@ const NewStoryPage = () => {
   };
 
   return (
-    <div className="NewStoryPage">
+    <div className="newStoryPage">
       <div className="backButton">
         <Link to="/">
           <img src={backButton} alt="Back Button" />

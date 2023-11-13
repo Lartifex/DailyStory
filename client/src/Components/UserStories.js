@@ -2,7 +2,6 @@ import Story from "./Story.js";
 import { Link } from "react-router-dom";
 
 const UserStories = ({ userStories }) => {
-  // console.log("userStories: ", userStories);
   return (
     <>
       {userStories &&

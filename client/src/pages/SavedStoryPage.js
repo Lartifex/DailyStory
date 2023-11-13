@@ -16,6 +16,8 @@ const SavedStoryPage = () => {
     if (res) {
       const response = await res.json();
       setUserStoryData(response);
+    } else {
+      throw new Error(`HTTP error! status: ${res.status}`);
     }
   };
 

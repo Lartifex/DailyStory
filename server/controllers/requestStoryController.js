@@ -30,7 +30,7 @@ export async function msgRequest(ctx, genre) {
     Genre: ${genre}`;
 
   try {
-    // Story request to GPT4
+    // https://platform.openai.com/docs/guides/text-generation/chat-completions-api
     const completion = await openai.chat.completions.create({
       messages: [{ role: "system", content: `${initialMessage}` }],
       model: "gpt-4",
@@ -38,23 +38,18 @@ export async function msgRequest(ctx, genre) {
     });
 
     let msgContent = JSON.parse(completion.choices[0].message.content);
-    console.log("MESSAGE", msgContent.text);
 
     let imgPrompt = msgContent.dalleMessage;
-    console.log("IMG PROMPT", imgPrompt);
 
-    // Image request to dalle
+    // https://platform.openai.com/docs/guides/images/usage
     const image = await openai.images.generate({
       model: "dall-e-3",
       prompt: `${imgPrompt}`,
       response_format: "b64_json",
     });
-    console.log("IMAGE DATA", image.data);
 
     let imgB64 = image.data[0].b64_json;
-    console.log("IMG B64", imgB64);
 
-    // Create a new StorySchema
     const storySchema = new StorySchema({
       date: Date.now(),
       imgB64: imgB64,
@@ -62,9 +57,7 @@ export async function msgRequest(ctx, genre) {
       text: msgContent.text,
       genre: msgContent.genre,
     });
-    console.log("STORY", storySchema);
 
-    // Save the storySchema to the DB
     await storySchema.save();
 
     ctx.body = storySchema;
@@ -74,10 +67,9 @@ export async function msgRequest(ctx, genre) {
   }
 }
 
-export async function getStoryById(ctx, next) {
+export async function getStoryById(ctx) {
   try {
     const _id = ctx.params._id;
-    console.log("ID:", _id);
     const stories = await StorySchema.findById(_id);
     if (!stories) {
       ctx.status = 404;

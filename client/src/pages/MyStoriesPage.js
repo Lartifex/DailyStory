@@ -9,8 +9,9 @@ const MyStoriesPage = () => {
     const res = await fetch(`http://localhost:3001/userstories`);
     if (res) {
       const response = await res.json();
-      console.log("response:", response);
       setAllUsersStories(response);
+    } else {
+      throw new Error(`HTTP error! status: ${res.status}`);
     }
   };
 

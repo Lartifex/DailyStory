@@ -12,17 +12,15 @@ function App() {
 
   useEffect(() => {
     const getStories = async () => {
-      const storiesFromServer = await fetchStories();
+      const storiesFromServer = await fetchTodayStories();
       setStories(storiesFromServer.stories);
     };
     getStories();
   }, []);
 
-  // Get all stories from today - db
-  const fetchStories = async () => {
+  const fetchTodayStories = async () => {
     const res = await fetch(`http://localhost:3001/stories/today`);
     const data = await res.json();
-    // console.log(data);
     return data;
   };
 
