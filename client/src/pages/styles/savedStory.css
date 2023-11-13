@@ -15,3 +15,18 @@
   border: 1px solid #4D7C0F;
   background: #4D7C0F;
 }
+
+.CreatedOnText p {
+  font-style: italic;
+}
+
+.TitleStory h1{
+  color: var(--dark-dark, #111928);
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.875rem;
+  padding-top: 40px;
+  margin-left: 10%;
+  margin-right: 10%;
+  text-align: center;
+}

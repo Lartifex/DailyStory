@@ -1,21 +1,22 @@
 import Story from "./Story.js";
-import "./styles/stories.css";
 import { Link } from "react-router-dom";
 
 const UserStories = ({ userStories }) => {
-  console.log("userStories: ", userStories);
+  // console.log("userStories: ", userStories);
   return (
     <>
       {userStories &&
-        userStories.map((story) => (
-          <Link
-            to={`/my-stories/${story._id}`}
-            style={{ textDecoration: "none" }}
-            key={story._id}
-          >
-            <Story story={story} />
-          </Link>
-        ))}
+        userStories
+          .sort((a, b) => (a.creationDate > b.creationDate ? 1 : -1))
+          .map((story) => (
+            <Link
+              to={`/my-stories/${story._id}`}
+              style={{ textDecoration: "none" }}
+              key={story._id}
+            >
+              <Story story={story} />
+            </Link>
+          ))}
     </>
   );
 };

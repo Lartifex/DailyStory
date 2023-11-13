@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import backButton from "../svg/backButton.svg";
-import "./newStory.css";
+import "./styles/newStory.css";
 import NewStory from "../components/NewStory";
 
 const NewStoryPage = () => {
@@ -45,7 +45,7 @@ const NewStoryPage = () => {
       text: storyData.text,
       title: storyData.title,
       genre: storyData.genre,
-      creationDate: storyData.creationDate,
+      creationDate: storyData.date,
     };
 
     const res = await fetch(`http://localhost:3001/userstories`, {
@@ -73,9 +73,12 @@ const NewStoryPage = () => {
 
   return (
     <div className="NewStoryPage">
-      <Link to="/">
-        <img src={backButton} alt="Back Button" />
-      </Link>
+      <div className="backButton">
+        <Link to="/">
+          <img src={backButton} alt="Back Button" />
+        </Link>
+      </div>
+
       <NewStory storyData={{ ...storyData }} />
       <div className="inputField">
         <textarea

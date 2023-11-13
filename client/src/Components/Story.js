@@ -1,8 +1,6 @@
-import "./styles/story.css";
-
 const Story = ({ story }) => {
   return (
-    <div className="container">
+    <div className="containerStory">
       <img src={`data:image/png;base64,${story.imgB64}`} alt="Story Cover" />
       <div className="textboxTitle">
         <h3>{story.title}</h3>

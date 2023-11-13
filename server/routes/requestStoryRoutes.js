@@ -1,5 +1,8 @@
 import Router from "koa-router";
-import { msgRequest, getStoryById } from "../controllers/requestStoryOpenai.js";
+import {
+  msgRequest,
+  getStoryById,
+} from "../controllers/requestStoryController.js";
 import { StorySchema } from "../models/storySchema.js";
 import moment from "moment";
 
@@ -16,10 +19,8 @@ requestStoryRouter.get("/stories/today", async (ctx) => {
         $lte: moment(today).endOf("day").toDate(),
       },
     });
-    // console.log("TODAY", todayStories);
     if (todayStories.length > 0) {
       ctx.body = { stories: todayStories };
-      // console.log("TODAY STORIES", todayStories);
     } else {
       // If there aren't, execute the function in requestStoryOpenai controller
       ctx = await msgRequest(ctx, "Fantasy");

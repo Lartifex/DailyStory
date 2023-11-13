@@ -1,6 +1,3 @@
-import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-
 const NewStory = ({ storyData }) => {
   return (
     <div>
@@ -10,7 +7,9 @@ const NewStory = ({ storyData }) => {
           alt="Story Cover"
         />
       </div>
-      <h1>{storyData.title}</h1>
+      <div className="TitleStory">
+        <h1>{storyData.title}</h1>
+      </div>
       <p>{storyData.text}</p>
     </div>
   );

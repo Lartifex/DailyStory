@@ -3,7 +3,7 @@ import {
   postUserStory,
   getUserStory,
   getAllUserStories,
-} from "../controllers/userStoryControl.js";
+} from "../controllers/userStoryController.js";
 
 const userStoryRouter = new Router();
 

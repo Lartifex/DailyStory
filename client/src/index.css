@@ -1,6 +1,80 @@
-body {
-  margin: 0px;
-  width: 100vw;
-  height: 100vh;
-  background: #FAFAFA;
+@media (min-width: 800px) {
+
+  .storiesScroll {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-auto-rows: minmax(100px,auto);
+    margin: auto;
+  }
+
+  .NewStoryPage {
+    padding: 6%;
+  }
+
+  .backButton img{
+    width: 4%;
+  }
+
+  .TitleStory h1 {
+    font-size: 2rem;
+  }
+
+  .containerWithFooter h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+    padding-top: 0.5%;
+  }
+
+  p {
+    font-size: 20px;
+    line-height: 1.7;
+  }
+
+  .CreatedOnText p {
+    padding-left: 4%;
+  }
+
+  .imgCover img {
+    max-width: 60%;
+  }
+  
+}
+
+@media (min-width: 1300px) {
+
+  .storiesScroll {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-auto-rows: minmax(100px,auto);
+    margin: auto;
+  }
+
+  .TitleStory h1 {
+    font-size: 3rem;
+  }
+
+  p {
+    font-size: 25px;
+    line-height: 1.8;
+  }
+
+  .CreatedOnText p {
+    padding-left: 10%;
+  }
+
+  .imgCover img {
+    max-width: 50%;
+  }
+
+  .containerWithFooter h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    padding-top: 1%;
+  }
 }

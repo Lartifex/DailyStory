@@ -3,7 +3,6 @@ import HomeIcon from "../svg/HomeIcon.svg";
 import MyStories from "../svg/MyStories.svg";
 import Profile from "../svg/Profile.svg";
 import { Link } from "react-router-dom";
-import "./styles/footer.css";
 
 const Footer = () => {
   return (

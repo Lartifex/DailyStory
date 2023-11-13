@@ -1,5 +1,4 @@
 import Story from "./Story.js";
-import "./styles/stories.css";
 import { Link } from "react-router-dom";
 
 const Stories = ({ stories }) => {
