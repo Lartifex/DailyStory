@@ -6,7 +6,7 @@ const UserStories = ({ userStories }) => {
     <div className="storiesScroll">
       {userStories &&
         userStories
-          .sort((a, b) => (a.creationDate > b.creationDate ? 1 : -1))
+          .sort((a, b) => (b.creationDate > a.creationDate ? 1 : -1))
           .map((story) => (
             <Link
               to={`/my-stories/${story._id}`}
