@@ -65,8 +65,8 @@ const NewStoryPage = () => {
   };
 
   const scrollToBottom = () => {
-    window.scrollTo({
-      top: document.documentElement.scrollHeight,
+    window.scrollBy({
+      top: 600,
       behavior: "smooth",
     });
   };
@@ -88,6 +88,7 @@ const NewStoryPage = () => {
           maxLength={300}
         />
       </div>
+      <div className="countStoryLength">{userStoryText.length}/300</div>
       <div onClick={saveUserStory} className="theEndContainer">
         <div className="textboxTitle">
           <h3>THE END</h3>

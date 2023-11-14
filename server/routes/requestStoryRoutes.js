@@ -13,7 +13,7 @@ requestStoryRouter.get("/stories/today", async (ctx) => {
     // Check if there are Stories created today in the db
     const today = moment().startOf("day");
     const todayStories = await StorySchema.find({
-      // date: new Date("2023-11-08T09:43:26.836+00:00"),
+      // date: new Date("2023-11-15T09:43:26.836+00:00"),
       date: {
         $gte: today.toDate(),
         $lte: moment(today).endOf("day").toDate(),

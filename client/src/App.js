@@ -4,7 +4,6 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import NewStoryPage from "./pages/NewStoryPage.js";
 import SavedStoryPage from "./pages/SavedStoryPage.js";
 import MyStoriesPage from "./pages/MyStoriesPage.js";
-import Profile from "./pages/ProfilePage.js";
 import HomePage from "./pages/HomePage.js";
 
 function App() {
@@ -34,7 +33,6 @@ function App() {
           element={<MyStoriesPage stories={stories} />}
         ></Route>
         <Route path="/my-stories/:id" element={<SavedStoryPage />}></Route>
-        <Route path="/profile" element={<Profile />}></Route>
       </Routes>
     </BrowserRouter>
   );

@@ -77,3 +77,10 @@ p {
 .theEndContainer h3 {
   width: 100%;
 }
+
+.countStoryLength{
+  display: flex;
+  justify-content: right;
+  margin: -3% 10% 7% auto;
+  color: #D97706;
+}
