@@ -1,10 +1,10 @@
-"use strict";
+'use strict';
 
-import Koa from "koa";
-import bodyParser from "koa-bodyparser";
-import cors from "@koa/cors";
-import requestStoryRouter from "./routes/requestStoryRoutes.js";
-import userStoryRouter from "./routes/userStoryRoutes.js";
+import Koa from 'koa';
+import bodyParser from 'koa-bodyparser';
+import cors from '@koa/cors';
+import requestStoryRouter from './routes/requestStoryRoutes.js';
+import userStoryRouter from './routes/userStoryRoutes.js';
 
 const app = new Koa();
 

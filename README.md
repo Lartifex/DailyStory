@@ -28,6 +28,7 @@ DailyStory is an innovative app designed to spark creativity in storytelling. Ea
 # Tech Stack:
 
 - [React.js](https://es.react.dev/reference/react) as the frontend framework
+- [Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide) language
 - Vanilla [CSS](https://css3.com/) for styling
 - [Koa.js](https://koajs.com/) and [Mongoose](https://mongoosejs.com/) for the backend server
 - [MongoDB](https://www.mongodb.com/docs/) as the database
