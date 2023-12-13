@@ -2,10 +2,10 @@
 
 DailyStory is an innovative app designed to spark creativity in storytelling. Each day, users are greeted with the beginnings of four different stories, each accompanied by a unique drawing. Users can select a story that resonates with them, complete it in their own words, and save their creative narratives in their personal profile. This app not only fosters creativity but also provides a platform for users to explore and share their storytelling talents, making it a daily adventure in imagination and expression.
 
-<img width="205" alt="Screenshot 2023-12-13 at 12 53 26" src="https://github.com/Lartifex/DailyStory/assets/59612434/55cd1eff-91fa-42b2-ba76-966effc7775b">
-<img width="205" alt="Screenshot 2023-12-13 at 12 54 13" src="https://github.com/Lartifex/DailyStory/assets/59612434/67d662a4-f234-4321-af55-39bc905ff5e0">
-<img width="205" alt="Screenshot 2023-12-13 at 12 56 21" src="https://github.com/Lartifex/DailyStory/assets/59612434/c03fda1f-8b46-42e2-9459-12fb73594f9a">
-<img width="205" alt="Screenshot 2023-12-13 at 12 58 14" src="https://github.com/Lartifex/DailyStory/assets/59612434/d7afc3c7-9406-4a56-bd8a-c2fa92ab5cdd">
+<img width="200" alt="Screenshot 2023-12-13 at 12 53 26" src="https://github.com/Lartifex/DailyStory/assets/59612434/55cd1eff-91fa-42b2-ba76-966effc7775b">
+<img width="200" alt="Screenshot 2023-12-13 at 12 54 13" src="https://github.com/Lartifex/DailyStory/assets/59612434/67d662a4-f234-4321-af55-39bc905ff5e0">
+<img width="200" alt="Screenshot 2023-12-13 at 12 56 21" src="https://github.com/Lartifex/DailyStory/assets/59612434/c03fda1f-8b46-42e2-9459-12fb73594f9a">
+<img width="200" alt="Screenshot 2023-12-13 at 12 58 14" src="https://github.com/Lartifex/DailyStory/assets/59612434/d7afc3c7-9406-4a56-bd8a-c2fa92ab5cdd">
 
 
 # Getting started:
