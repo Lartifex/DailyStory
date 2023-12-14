@@ -1,6 +1,6 @@
 import './App.css';
 import { useState, useEffect } from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import NewStoryPage from './pages/NewStoryPage.js';
 import SavedStoryPage from './pages/SavedStoryPage.js';
 import MyStoriesPage from './pages/MyStoriesPage.js';
@@ -26,19 +26,14 @@ function App() {
   };
 
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/" element={<HomePage stories={stories} />} />
-        <Route path="/new-story/:id" element={<NewStoryPage />} />
-        <Route
-          path="/my-stories"
-          element={<MyStoriesPage stories={stories} />}
-        />
-        <Route path="/my-stories/:id" element={<SavedStoryPage />} />
-      </Routes>
-    </BrowserRouter>
+    <Routes>
+      <Route path="/login" element={<LoginPage />} />
+      <Route path="/register" element={<Register />} />
+      <Route path="/" element={<HomePage stories={stories} />} />
+      <Route path="/new-story/:id" element={<NewStoryPage />} />
+      <Route path="/my-stories" element={<MyStoriesPage stories={stories} />} />
+      <Route path="/my-stories/:id" element={<SavedStoryPage />} />
+    </Routes>
   );
 }
 

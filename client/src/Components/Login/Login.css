@@ -1,20 +1,27 @@
-.login-container {
+.auth-container {
+  position: absolute;
+  width: 100%;
+  transform: translate(0%, 40%);
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
 }
 
-.login-box {
-  width: 90%;
-  height: 90%;
+.auth-box {
+  width: 80%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  background-color: var(--light-grey);
+  padding-top: 8%;
+  padding-bottom: 10%;
+  background-color: var(--dark-blue-color);
+  border-radius: 5%;
 
-  & h2 {
-    width: 90%;
+  & .auth-title {
     text-align: center;
+    font-weight: 600;
+    font-size: x-large;
+    color: var(--white-color);
+    padding: 7%;
   }
 
   & .form {
@@ -22,26 +29,25 @@
     flex-wrap: wrap;
     justify-content: center;
 
-    & .auth {
-      width: 80%;
-      padding: 10px;
-      margin: 10px 0;
-      border: 1px solid #ccc;
+    & input {
+      visibility: visible;
+      width: 70%;
+      padding: 6%;
+      margin: 2%;
       border-radius: 5px;
+      background-color: var(--background-color);
     }
 
-    & .login-button {
-      width: 80%;
-      padding: 8px;
-      margin: 20px 0;
+    & .auth-button {
+      width: 30%;
+      padding: 5% 0% 5% 0%;
+      margin: 5%;
       border: none;
       border-radius: 5px;
       background-color: var(--primary-color);
-      color: rgb(0, 0, 0);
+      color: var(--dark-blue-color);
+      font-weight: 600;
+      font-size: 14px;
     }
   }
-}
-
-input {
-  visibility: visible;
 }

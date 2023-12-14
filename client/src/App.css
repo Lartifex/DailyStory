@@ -8,8 +8,12 @@
 }
 
 :root {
+  --background-color: #f8f7f6;
   --primary-color: #06b6d4;
-  --light-grey: #e4e4e4;
+  --secondary-color: #d97706;
+  --light-grey-color: #e4e4e4;
+  --dark-blue-color: #111928;
+  --white-color: #ffff;
 }
 
 .containerWithFooter h1 {
@@ -27,7 +31,7 @@ body {
   margin: 0px;
   width: 100vw;
   height: 100vh;
-  background: #f4f2f2;
+  background: var(--background-color);
   display: flex;
 }
 
