@@ -1,8 +1,8 @@
-const BASE_URL = process.env.BASE_URL;
+// const BASE_URL = process.env.REACT_APP_BASE_URL;
 
 export async function login({ email, password }) {
   try {
-    const response = await fetch(`${BASE_URL}/login`, {
+    const response = await fetch(`http://localhost:3001/login`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -24,7 +24,7 @@ export async function login({ email, password }) {
 
 export async function register({ username, email, password }) {
   try {
-    const response = await fetch(`${BASE_URL}/register`, {
+    const response = await fetch(`http://localhost:3001/register`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

@@ -1,30 +1,23 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useSignIn } from 'react-auth-kit';
 import { login } from '../../services/auth';
+import Cookies from 'js-cookie';
 import './Login.css';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
-  const signIn = useSignIn();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const response = await login({ email, password });
-
-    if (response.success) {
-      signIn({
-        token: response.token,
-        expiresIn: 60,
-        tokenType: 'Bearer',
-        authState: response.user,
-      });
+    if (response.success && response.sessionToken) {
+      Cookies.set('sessionToken', response.sessionToken, { expires: 1 });
+      navigate('/');
     } else {
-      console.error('Login failed: ', response.message);
+      console.error('Login failed:', response.message);
     }
-    navigate('/');
   };
   return (
     <div className="auth-container">

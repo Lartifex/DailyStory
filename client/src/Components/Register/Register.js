@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Register.css';
+import { register } from '../../services/auth';
 
 const Register = () => {
   const navigate = useNavigate();
@@ -18,7 +19,16 @@ const Register = () => {
     });
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const username = inputValues.username;
+    const email = inputValues.email;
+    const password = inputValues.password;
+
+    const response = await register({ username, email, password });
+    console.log('response register', response);
+
     navigate('/login');
   };
 
@@ -26,7 +36,7 @@ const Register = () => {
     <div className="auth-container">
       <div className="auth-box">
         <div className="auth-title">Register</div>
-        <form className="form" nSubmit={handleSubmit}>
+        <form className="form" onSubmit={handleSubmit}>
           <input
             type="text"
             name="username"

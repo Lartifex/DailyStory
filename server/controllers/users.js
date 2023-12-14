@@ -5,6 +5,7 @@ import { UserSchema } from '../models/userSchema.js';
 export async function registerUser(ctx) {
   try {
     const { username, email, password } = ctx.request.body;
+    console.log('ctx.request.body', ctx.request.body);
 
     const saltRounds = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(password, saltRounds);
@@ -33,16 +34,23 @@ export async function loginUser(ctx) {
     const user = await UserSchema.findOne({ email }).select(
       '+authentication.password'
     );
+    if (!user) {
+      throw new Error('User not found');
+    }
+    const isPasswordMatch = await bcrypt.compare(
+      password,
+      user.authentication.password
+    );
 
-    if (!user || !validatePassword(password, user.authentication.password)) {
-      throw new Error('Invalid email or password');
+    if (!isPasswordMatch) {
+      throw new Error('Invalid password');
     }
 
     function generateSessionToken() {
       return randomBytes(64).toString('hex');
     }
 
-    const sessionToken = generateSessionToken;
+    const sessionToken = generateSessionToken();
     user.authentication.sessionToken = sessionToken;
     await user.save();
 
