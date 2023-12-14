@@ -1,4 +1,5 @@
 // const BASE_URL = process.env.REACT_APP_BASE_URL;
+import Cookies from 'js-cookie';
 
 export async function login({ email, password }) {
   try {
@@ -43,3 +44,8 @@ export async function register({ username, email, password }) {
     return { success: false, message: error.message };
   }
 }
+
+export const isAuthenticated = () => {
+  const token = Cookies.get('sessionToken');
+  return !!token;
+};

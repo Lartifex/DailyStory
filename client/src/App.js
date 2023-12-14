@@ -1,6 +1,7 @@
 import './App.css';
 import { useState, useEffect } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import ProtectedRoute from './hooks/ProtectedRoute.js';
 import NewStoryPage from './pages/NewStoryPage.js';
 import SavedStoryPage from './pages/SavedStoryPage.js';
 import MyStoriesPage from './pages/MyStoriesPage.js';
@@ -8,7 +9,7 @@ import HomePage from './pages/HomePage.js';
 import LoginPage from './pages/LogInPage.js';
 import Register from './components/Register/Register.js';
 
-function App() {
+const App = () => {
   const [stories, setStories] = useState([]);
 
   useEffect(() => {
@@ -30,16 +31,41 @@ function App() {
       <Routes>
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/" element={<HomePage stories={stories} />} />
-        <Route path="/new-story/:id" element={<NewStoryPage />} />
+        <Route
+          path="/"
+          element={
+            <ProtectedRoute>
+              <HomePage stories={stories} />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/new-story/:id"
+          element={
+            <ProtectedRoute>
+              <NewStoryPage />
+            </ProtectedRoute>
+          }
+        />
         <Route
           path="/my-stories"
-          element={<MyStoriesPage stories={stories} />}
+          element={
+            <ProtectedRoute>
+              <MyStoriesPage stories={stories} />
+            </ProtectedRoute>
+          }
         />
-        <Route path="/my-stories/:id" element={<SavedStoryPage />} />
+        <Route
+          path="/my-stories/:id"
+          element={
+            <ProtectedRoute>
+              <SavedStoryPage />
+            </ProtectedRoute>
+          }
+        />
       </Routes>
     </BrowserRouter>
   );
-}
+};
 
 export default App;

@@ -1,7 +1,7 @@
 .auth-container {
   position: absolute;
   width: 100%;
-  transform: translate(0%, 40%);
+  transform: translate(0%, 20%);
   display: flex;
   justify-content: center;
 }
@@ -49,5 +49,23 @@
       font-weight: 600;
       font-size: 14px;
     }
+  }
+}
+
+& .redirect {
+  margin-top: 10%;
+  color: var(--light-grey-color);
+  font-size: 12px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  & .auth-button {
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-weight: 600;
+    font-size: 14px;
+    margin-left: 5%;
   }
 }

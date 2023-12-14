@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import './Register.css';
 import { register } from '../../services/auth';
 
@@ -77,6 +77,12 @@ const Register = () => {
             SIGN UP
           </button>
         </form>
+        <div className="redirect">
+          Already have an account?
+          <Link to="/login" className="auth-button">
+            LOG IN
+          </Link>
+        </div>
       </div>
     </div>
   );

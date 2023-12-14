@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { login } from '../../services/auth';
 import Cookies from 'js-cookie';
 import './Login.css';
@@ -42,6 +42,12 @@ const Login = () => {
             LOG IN
           </button>
         </form>
+        <div className="redirect">
+          Don't have an account?
+          <Link to="/register" className="auth-button">
+            SIGN UP
+          </Link>
+        </div>
       </div>
     </div>
   );
