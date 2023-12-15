@@ -1,6 +1,7 @@
 import './App.css';
 import { useState, useEffect } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Toaster } from 'react-hot-toast';
 import ProtectedRoute from './hooks/ProtectedRoute.js';
 import NewStoryPage from './pages/NewStoryPage.js';
 import SavedStoryPage from './pages/SavedStoryPage.js';
@@ -28,6 +29,7 @@ const App = () => {
 
   return (
     <BrowserRouter>
+      <Toaster position="top-center" />
       <Routes>
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<Register />} />
