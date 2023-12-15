@@ -19,9 +19,20 @@ export async function registerUser(ctx) {
       },
     });
 
+    function generateSessionToken() {
+      return randomBytes(64).toString('hex');
+    }
+
+    const sessionToken = generateSessionToken();
+    newUser.authentication.sessionToken = sessionToken;
     await newUser.save();
+
     ctx.status = 201;
-    ctx.body = { message: 'User registered successfully' };
+    ctx.body = {
+      message: 'User registered successfully',
+      sessionToken,
+      username,
+    };
   } catch (error) {
     ctx.status = 400;
     ctx.body = { error: error.message };
@@ -54,7 +65,8 @@ export async function loginUser(ctx) {
     user.authentication.sessionToken = sessionToken;
     await user.save();
 
-    ctx.body = { message: 'Login successfull', sessionToken };
+    const username = user.username;
+    ctx.body = { message: 'Login successfull', sessionToken, username };
   } catch (error) {
     ctx.status = 400;
     ctx.body = { error: error.message };
