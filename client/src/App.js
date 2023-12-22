@@ -8,8 +8,8 @@ import NewStoryPage from './pages/NewStoryPage.js';
 import SavedStoryPage from './pages/SavedStoryPage.js';
 import MyStoriesPage from './pages/MyStoriesPage.js';
 import HomePage from './pages/HomePage.js';
-import LoginPage from './pages/LogInPage.js';
 import Register from './components/Register/Register.js';
+import Login from './components/Login/Login.js';
 
 const App = () => {
   const {
@@ -31,7 +31,7 @@ const App = () => {
     <BrowserRouter>
       <Toaster position="top-center" />
       <Routes>
-        <Route path="/login" element={<LoginPage />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route
           path="/"

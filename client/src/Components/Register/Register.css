@@ -1,0 +1,20 @@
+.register-container {
+  position: absolute;
+  width: 100%;
+  transform: translate(0%, 20%);
+  display: flex;
+  justify-content: center;
+  & .auth-box {
+    & .form {
+      & .auth-button {
+        background-color: var(--secondary-color);
+        color: var(--dark-blue-color);
+      }
+    }
+  }
+  & .redirect {
+    & .auth-button {
+      color: var(--primary-color);
+    }
+  }
+}
