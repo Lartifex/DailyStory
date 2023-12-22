@@ -1,7 +1,8 @@
 import './App.css';
-import { useState, useEffect } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
+import { useQuery } from '@tanstack/react-query';
+import { fetchTodayStories } from './services/stories.js';
 import ProtectedRoute from './hooks/ProtectedRoute.js';
 import NewStoryPage from './pages/NewStoryPage.js';
 import SavedStoryPage from './pages/SavedStoryPage.js';
@@ -11,21 +12,20 @@ import LoginPage from './pages/LogInPage.js';
 import Register from './components/Register/Register.js';
 
 const App = () => {
-  const [stories, setStories] = useState([]);
+  const {
+    data: stories,
+    isError,
+    isLoading,
+  } = useQuery({
+    queryKey: ['stories'],
+    queryFn: () => fetchTodayStories(),
+    options: {
+      staleTime: Infinity,
+    },
+  });
 
-  useEffect(() => {
-    const getStories = async () => {
-      const storiesFromServer = await fetchTodayStories();
-      setStories(storiesFromServer.stories);
-    };
-    getStories();
-  }, []);
-
-  const fetchTodayStories = async () => {
-    const res = await fetch(`http://localhost:3001/stories/today`);
-    const data = await res.json();
-    return data;
-  };
+  if (isLoading) return <div>Loading stories...</div>;
+  if (isError) return <div>Error fetching stories.</div>;
 
   return (
     <BrowserRouter>
