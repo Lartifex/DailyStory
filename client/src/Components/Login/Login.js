@@ -4,6 +4,7 @@ import { login } from '../../services/auth';
 import toast from 'react-hot-toast';
 import Cookies from 'js-cookie';
 import './Login.css';
+import Particle from '../Background/Particle.js';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -26,36 +27,39 @@ const Login = () => {
   };
 
   return (
-    <div className="auth-container">
-      <div className="auth-box">
-        <div className="auth-title">Welcome back!</div>
-        <form className="form" onSubmit={handleSubmit}>
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="Email"
-            required
-          />
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            placeholder="Password"
-            required
-          />
-          <button type="submit" className="auth-button">
-            LOG IN
-          </button>
-        </form>
-        <div className="redirect">
-          Don't have an account?
-          <Link to="/register" className="auth-button">
-            SIGN UP
-          </Link>
+    <>
+      <Particle particlesColor={'#06b6d4'} />
+      <div className="login-container">
+        <div className="auth-box">
+          <div className="auth-title">Welcome!</div>
+          <form className="form" onSubmit={handleSubmit}>
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Email"
+              required
+            />
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="Password"
+              required
+            />
+            <button type="submit" className="auth-button">
+              LOG IN
+            </button>
+          </form>
+          <div className="redirect">
+            Don't have an account?
+            <Link to="/register" className="auth-button">
+              SIGN UP
+            </Link>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
